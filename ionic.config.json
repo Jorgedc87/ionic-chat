@@ -1,0 +1,7 @@
+{
+  "name": "ALED-Ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
