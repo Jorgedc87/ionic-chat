@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Inicio",
+        "redirectTo": "/index"
+    },
+    {
+        "name": "Chat",
+        "redirectTo": "/chat"
+    },
+    {
+        "name": "Sobre Mi",
+        "redirectTo": "/about-me"
+    },
+    {
+        "name": "Login",
+        "redirectTo": "/login"
+    },
+    {
+        "name": "Registro",
+        "redirectTo": "/register"
+    }
+]

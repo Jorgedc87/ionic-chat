@@ -1,0 +1,30 @@
+  <ion-menu side="start" menuId="first" contentId="main-content">
+    <ion-header>
+      <ion-toolbar color="dark">
+        <ion-title>Menu Principal</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-list>
+        <ion-item [routerLink]="['/index']" (click)="toggleMenu()">Inicio</ion-item>
+        <ion-item [routerLink]="['/chat']" (click)="toggleMenu()">Chat</ion-item>
+        <!-- <ion-item [routerLink]="['/about-me']" (click)="toggleMenu()">About Me</ion-item> -->
+        <ion-item [routerLink]="['/index']" (click)="logout()" *ngIf="userSer.auth()">Logout</ion-item>
+        <ion-item [routerLink]="['/register']" (click)="toggleMenu()" *ngIf="!userSer.auth()">Registro</ion-item>
+        <ion-item [routerLink]="['/login']" (click)="toggleMenu()" *ngIf="!userSer.auth()">Login</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <div class="ion-page">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+
+  </div>

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="dark">
+        <ion-buttons slot="start">
+      <ion-button (click)="toggleMenu()">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Chat</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="chat-boxes" #ChatBox>
+    <div *ngFor="let mensaje of mensajes">
+      <ion-card [ngClass]="mensaje.id === userId ? 'chat-me' : 'chat-other'">
+        <ion-card-header>
+          {{mensaje.name}} ({{mensaje.timestamp.toDate() | date: 'd/MM - HH:mm'}}):
+        </ion-card-header>
+        <ion-card-content>
+          {{mensaje.mensaje}}
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="dark" class="toolbar-send">
+    <ion-textarea placeholder="Mensaje" class="textarea-send" [(ngModel)]="chatArea"></ion-textarea>
+    <ion-buttons slot="end">
+      <ion-button (click)="enviaMensaje()">
+        Enviar 
+        <ion-icon  class="enviar"  name="send"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

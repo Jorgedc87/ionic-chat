@@ -1,0 +1,34 @@
+.chat-boxes{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+    .chat-me{
+        max-width: 60%;
+        float:right;
+        background-color: rgb(178, 250, 208);
+        place-self: end;
+    }
+    .chat-other{
+        max-width: 60%;
+        float:left;
+        background-color: rgb(255, 233, 172);
+        place-self: start;
+    }
+}
+
+.enviar{
+    padding: 0 10px;
+}
+
+.textarea.send{
+    display: flex;
+    align-items: center;
+}
+
+.toolbar-send{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+
+}

@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-button (click)="toggleMenu()">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Inicia Sesion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="title">Login</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="forma">
+        <ion-item>
+          <ion-label position="floating">Name</ion-label>
+          <ion-input formControlName="name" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input formControlName="email" type="email" autocomplete="false"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input formControlName="password" type="password" autocomplete="false"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Repeat Password</ion-label>
+          <ion-input formControlName="password-repeat" type="password" autocomplete="false"></ion-input>
+        </ion-item>
+      </form>
+      <br>
+      <ion-button (click)="register()" class="inicia-button">
+        Registrate
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="dark">
+    <ion-button slot="end" color="dark" class="reg-button" [routerLink]="['/login']">
+      Inicia Sesion
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
