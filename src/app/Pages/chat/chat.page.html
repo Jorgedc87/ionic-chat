@@ -1,27 +1,34 @@
 <ion-header>
-  <ion-toolbar color="dark">
-        <ion-buttons slot="start">
+  <ion-toolbar color="dark" class="menu-nav">
+    <ion-buttons slot="start">
       <ion-button (click)="toggleMenu()">
         <ion-icon slot="icon-only" name="menu"></ion-icon>
       </ion-button>
     </ion-buttons>
     <ion-title>Chat</ion-title>
   </ion-toolbar>
+  <div class="search-box">
+    <input type="text" class="search-input" placeholder="Busca una palabra" [(ngModel)]="filterChat">
+    <button type="button" class="search-btn">Buscar</button>
+  </div>
 </ion-header>
 
-<ion-content>
-  <div class="chat-boxes" #ChatBox>
-    <div *ngFor="let mensaje of mensajes">
-      <ion-card [ngClass]="mensaje.id === userId ? 'chat-me' : 'chat-other'">
-        <ion-card-header>
-          {{mensaje.name}} ({{mensaje.timestamp.toDate() | date: 'd/MM - HH:mm'}}):
-        </ion-card-header>
-        <ion-card-content>
-          {{mensaje.mensaje}}
-        </ion-card-content>
-      </ion-card>
+<ion-content scrollDownOnLoad="true" #content>
+  <div class="chat-background" #content2>
+    <div class="chat-boxes" id="chat-boxes" #chatb>
+      <div *ngFor="let mensaje of mensajes | search: filterChat " #chatb>
+        <ion-card [ngClass]="mensaje.id === userId ? 'chat-me' : 'chat-other'">
+          <ion-card-header>
+            {{mensaje.name}} ({{mensaje.timestamp.toDate() | date: 'd/MM - HH:mm'}}):
+          </ion-card-header>
+          <ion-card-content>
+            {{mensaje.mensaje}}
+          </ion-card-content>
+        </ion-card>
+      </div>
     </div>
   </div>
+
 
 </ion-content>
 

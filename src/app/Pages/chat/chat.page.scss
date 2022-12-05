@@ -1,13 +1,29 @@
+.chat-background{
+    background-image: url('../../../assets/bg.jpg');
+    background-attachment:scroll;
+    height: 100%;
+    position: relative;
+    background-repeat: repeat-y;
+    // background-size: contain;
+}
+
 .chat-boxes{
     display: flex;
     flex-direction: column;
     width: 100%;
+    min-height: 100%;
+    overflow:auto;
+    background-image: url('../../../assets/bg.jpg');
+    background-attachment:scroll;
+
+    // background-size: cover;
     
     .chat-me{
         max-width: 60%;
         float:right;
         background-color: rgb(178, 250, 208);
         place-self: end;
+
     }
     .chat-other{
         max-width: 60%;
@@ -31,4 +47,50 @@
     display: flex;
     align-items: center;
 
+}
+
+.class{
+    background-color: red;
+}
+
+.search-box{
+    background-color: #222428;
+    display: flex;
+    border-bottom: 1px solid rgb(44, 44, 44);
+
+    .search-input{
+        background-color: #33353b;
+        border: 1px #222428ad solid;
+        padding: 3px 15px;
+        margin: 3px 5px;
+        border-bottom: 1px #292b2ead solid;
+        height: 25px;
+        color: rgb(206, 206, 206);
+        border-radius: 2px;
+        
+        &:focus{
+            color: rgb(206, 206, 206);
+            border: none;
+        }
+
+        &:hover{
+            color: rgb(206, 206, 206);
+            border: none;
+        }
+    }
+
+    .search-btn{
+        background-color: rgb(39, 11, 105);
+        padding: 3px 5px;
+        border-radius: 2px;
+        color: white;
+        height: 25px;
+        font-size: 10px;
+        margin: 3px 5px;
+
+        &:focus{
+            border: none;
+            background-color: rgb(55, 18, 143);
+        }
+    }
 }

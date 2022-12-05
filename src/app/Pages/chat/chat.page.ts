@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { Mensaje } from 'src/app/interfaces/mensaje';
 import { ChatService } from 'src/app/services/chat.service';
+import { IonContent } from '@ionic/angular';
 
 @Component({
   selector: 'app-chat',
@@ -9,11 +10,13 @@ import { ChatService } from 'src/app/services/chat.service';
   styleUrls: ['./chat.page.scss'],
 })
 export class ChatPage implements OnInit {
+  @ViewChild('content') private content: any;
 
   mensajes: Mensaje[]
-  chatArea: string = ''
-  userId = localStorage.getItem('idALED')
+  chatArea: string = '';
+  userId = localStorage.getItem('idALED');
   error = {active: false,mensaje: ""}
+  filterChat = '';
   
   constructor(private menuCtrl: MenuController, public chatServ: ChatService) { }
 
@@ -23,7 +26,8 @@ export class ChatPage implements OnInit {
       this.mensajes =  mensajes
       console.log(mensajes)
       console.log(mensajes.sort(this.msj))
-    }) 
+      this.scrollToBottomOnInit()
+    });
   }
 
   enviaMensaje(){
@@ -61,5 +65,12 @@ export class ChatPage implements OnInit {
       return 0
     }
   }
-  
+
+  scrollToBottomOnInit() {
+    console.log('scrolling');
+    setTimeout(() => {
+      this.content.scrollToBottom(300);
+    }, 3000);
+  }
+
 }

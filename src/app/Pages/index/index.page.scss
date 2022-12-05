@@ -1,0 +1,59 @@
+@media (min-width: 992px) {
+    #intro {
+      margin-top: -1rem;
+    }
+  }
+  #intro {
+    margin-top: -1rem;
+    max-height: calc(100vh - 58.56px - 118.59px);
+  }
+  
+  .navbar .nav-link {
+    color: #fff !important;
+  }
+  
+  .index-text{
+    height: calc(40vh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .index-text__box{
+        color: white;
+
+        .buttons{
+            display: flex;
+            column-gap: 10px;
+            justify-content: center;
+        }
+    }
+
+    .btn-outline-light{
+        padding: 10px 15px;
+        text-decoration: none;
+        border-radius: 5px;
+        color: black;
+    }
+
+    .btn-chat{
+        background-color: rgb(255, 195, 67);
+
+    }
+
+    .btn-reg{
+        background-color: rgb(67, 255, 177);
+    }
+  }
+
+  .video-class{
+    width: 100vw;
+    height: 100vh;
+    // height: calc(100vh - 56px);
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
